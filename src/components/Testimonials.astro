@@ -1,0 +1,109 @@
+<section id="testimonials">
+    <h1>THE MAIN PURPOSE IS A HAPPY CUSTOMER</h1>
+    <h2>What the community says about us</h2>
+    <div id="card-box">
+        <div class="card">
+            <p>Sterling Painting was very professional, polite, and have done great work on several projects for me. I highly recommend them for your next project.</p>
+            <h3> - Samuel Miller</h3>
+        </div>
+        <div class="card">
+            <p>The team at Sterling Painting demonstrated a strong attention to detail throughout the entire process. I was amazed at the level of precision and skill exhibited by Sterling. I highly recommend them to anyone in need of painting services for their home.</p>
+            <h3> - Ashley Hairfield</h3>
+        </div>
+        <div class="card">
+            <p>Sterling was very professional. He showed up on time and did a great job. He did it quickly but not in a sloppy way. His attention to detail was wonderful and even painted things I hadn't considered so that everything would look right.</p>
+            <h3> - Bret Johnson</h3>
+        </div>
+        <div class="card">
+            <p>I've been a home improvement contractor for 35 years and I needed a trustworthy painter for a project 3.5 hours away. I'm so grateful to have met and worked with Sterling. Trustworthy, Detailed, Respectful and More!</p>
+            <h3> - John Gannaway</h3>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+        padding: 5rem 0;
+        color: black;
+    }
+    h1 {
+        letter-spacing: 1px;
+        margin-left: 2rem;
+        font-size: 1.25rem;
+        padding: 0.5rem;
+        border-radius: 10px 3px;
+    }
+    h2 {
+        margin-left: 2rem;
+        margin-top: 1rem;
+        font-size: 2.25rem;
+        font-weight: 700;
+    }
+    #card-box {
+        display: flex;
+        margin-top: 1rem;
+    }
+    .card {
+        color: white;
+        margin: 0.5rem;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        transition: 300ms;
+    }
+    .card:hover {
+        box-shadow: 0 8px 12px 0 #696969;
+    }
+    p {
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+        line-height: 1.5rem;
+        font-style: italic;
+    }
+    h3 {
+        text-align: right;
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+    .card:nth-of-type(1) {
+        background-color: #204040;
+    }
+    .card:nth-of-type(2) {
+        background-color: #446c7d;
+    }
+    .card:nth-of-type(3) {
+        /* background-color: #7c7e83; */
+        background-color: #9d897f;
+    }
+    .card:nth-of-type(4) {
+        background-color: #9d4924;
+    }
+    @media (max-width: 65rem) {
+        #card-box {
+            flex-direction: column;
+        }
+        h1,
+        h2 {
+            margin-left: 1rem;
+        }
+    }
+</style>
+
+<script>
+    const testimonials = document.getElementById("testimonials");
+    const logoImg = document.getElementById("logo");
+    const logoText = document.getElementById("logo-text");
+    const btn = document.getElementById("estimate-btn");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            logoText.classList.toggle("black", entry.isIntersecting);
+            btn.classList.toggle("black-bg", entry.isIntersecting);
+            logoImg.classList.toggle("black", entry.isIntersecting);
+        })
+    },
+    {
+        threshold: 0.1,
+    })
+    observer.observe(testimonials);
+</script>

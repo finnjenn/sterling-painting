@@ -1,0 +1,150 @@
+<section id="services">
+    <h1>WHAT WE OFFER</h1>
+    <h2>Our painting services</h2>
+    <div id="main">
+        <div class="group">
+            <div class="item">
+                <!-- <div class="img">IMAGE</div> -->
+                <img src="/images/s1.jpg" alt="" class="img">
+            </div>
+            <div class="item" id="item1">
+                <h3>Interior Painting</h3>
+                <!-- <p>This is the paragraph element. Paragraph elements are block-level elements that are used to represent simple chunks of text.</p> -->
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit impedit accusantium. Cupiditate at fuga porro necessitatibus odit suscipit, perspiciatis delectus magni vitae assumenda quisquam vero laboriosam ratione! In, officia.</p>
+            </div>
+        </div>
+        <div class="group reverse">
+            <div class="item" id="item2">
+                <h3>Cabinet Finishing</h3>
+                <!-- <p>This is the paragraph element. Paragraph elements are block-level elements that are used to represent simple chunks of text.</p> -->
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit impedit accusantium. Cupiditate at fuga porro necessitatibus odit suscipit, perspiciatis delectus magni vitae assumenda quisquam vero laboriosam ratione! In, officia.</p>
+            </div>
+            <div class="item">
+                <img src="/images/s2.jpg" alt="" class="img">
+            </div>
+        </div>
+        <div class="group">
+            <div class="item">
+                <img src="/images/s3.jpg" alt="" class="img">
+            </div>
+            <div class="item" id="item3">
+                <h3>White Washing</h3>
+                <!-- <p>This is the paragraph element. Paragraph elements are block-level elements that are used to represent simple chunks of text.</p> -->
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit impedit accusantium. Cupiditate at fuga porro necessitatibus odit suscipit, perspiciatis delectus magni vitae assumenda quisquam vero laboriosam ratione! In, officia.</p>
+            </div>
+        </div>
+        <div class="group reverse">
+            <div class="item" id="item4">
+                <h3>Exterior Deck Staining</h3>
+                <!-- <p>This is the paragraph element. Paragraph elements are block-level elements that are used to represent simple chunks of text.</p> -->
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit impedit accusantium. Cupiditate at fuga porro necessitatibus odit suscipit, perspiciatis delectus magni vitae assumenda quisquam vero laboriosam ratione! In, officia.</p>
+            </div>
+            <div class="item">
+                <img src="/images/s4.jpg" alt="" class="img">
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    section {
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+        margin-bottom: 6rem;
+    }
+    h1 {
+        text-align: center;
+        letter-spacing: 1px;
+        margin-top: 8rem;
+    }
+    h2 {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 500;
+        margin-top: 1.5rem;
+    }
+    #main {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 3rem;
+    }
+    .group {
+        display: flex;
+        /* border: 1px solid red; */
+        margin: 1rem 3rem;
+        /* border-radius: 1rem; */
+    }
+    .item {
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* margin: 2rem; */
+        color: white;
+    }
+    .img {
+        width: 100%;
+        height: 350px;
+        /* border: 3px solid black; */
+        object-fit: cover;
+        /* border-radius: 0 1rem 1rem 0; */
+    }
+    h3 {
+        font-size: 1.75rem;
+        font-weight: 500;
+        margin: 2rem;
+        letter-spacing: 1px;
+    }
+    p {
+        margin: 0 2rem 2rem;
+        line-height: 1.75rem;
+    }
+    #item1 {
+        background-color: #204040;
+    }
+    #item2 {
+        background-color: #446c7d;
+    }
+    #item3 {
+        /* background-color: #7c7e83; */
+        background-color: #9d897f;
+    }
+    #item4 {
+        background-color: #9d4924;
+    }
+    @media (max-width: 50rem) {
+        h2 {
+            font-size: 2.25rem;
+        }
+        .img {
+            border-radius: 1rem 1rem 0 0;
+        }
+        .item {
+            border-radius: 0 0 1rem 1rem;
+        }
+        .group {
+            flex-direction: column;
+            margin: 1rem 1.5rem;
+        }
+        .reverse {
+            flex-direction: column-reverse;
+        }
+    }
+</style>
+
+<script>
+    const services = document.getElementById("services");
+    const logoImg = document.getElementById("logo");
+    const logoText = document.getElementById("logo-text");
+    const btn = document.getElementById("estimate-btn");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            logoText.classList.toggle("black", entry.isIntersecting);
+            btn.classList.toggle("black-bg", entry.isIntersecting);
+            logoImg.classList.toggle("black", entry.isIntersecting);
+        })
+    },
+    {
+        threshold: 0.1,
+    })
+    observer.observe(services);
+</script>

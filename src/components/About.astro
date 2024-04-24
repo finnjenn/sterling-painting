@@ -1,0 +1,103 @@
+<section id="about">
+    <img src="/images/couple2.png" alt="" width="366" height="339">
+    <div id="text">
+        <h1>ABOUT US</h1>
+        <h2>The Creative Minds Behind The Business</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dolorum, modi officia at dolores reiciendis corrupti corporis, facilis cupiditate repellat natus ex temporibus commodi incidunt maiores dignissimos! Molestiae, animi eius.
+            Ipsa dolore adipisci a similique ratione? Mollitia ab assumenda eveniet placeat rem a repudiandae porro quidem nisi nostrum vel sunt totam provident magnam laborum, laudantium reiciendis at quibusdam perspiciatis optio!</p>
+        <a href="#services"><button>EXPLORE SERVICES</button></a>
+        <a href="#estimate"><button>CONTACT US</button></a>
+    </div>
+</section>
+
+<style>
+    section {
+        /* background-color: #558ac6; */
+        color: white;
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+        background-color: #4d547a;
+        display: flex;
+        padding: 4rem 0;
+    }
+    img {
+        flex-basis: 50%;
+        object-fit: contain;
+    }
+    #text {
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 1rem;
+    }
+    h1 {
+        font-weight: 300;
+        font-size: 1.25rem;
+        letter-spacing: 1px;
+    }
+    h2 {
+        font-weight: 500;
+        font-size: 2.5rem;
+        margin-top: 1.5rem;
+    }
+    p {
+        margin-top: 1.5rem;
+    }
+    a {
+        text-decoration: none;
+        margin-top: 1.5rem;
+    }
+    button {
+        background-color: #558ac6;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: 2px solid #558ac6;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        letter-spacing: 1px;
+        transition: 300ms;
+    }
+    button:hover {
+        background-color: transparent;
+    }
+    @media (max-width: 55rem) {
+        section {
+            flex-direction: column;
+            align-items: center;
+        }
+        #text {
+            /* text-align: center; */
+            margin: 0 2rem;
+        }
+        h1 {
+            margin-top: 3rem;
+        }
+    }
+    @media (max-width: 35rem) {
+        h2 {
+            font-size: 1.75rem;
+        }
+        p {
+            font-size: 0.9rem;
+        }
+    }
+</style>
+
+<script>
+    const about = document.getElementById("about");
+    const logoImg = document.getElementById("logo");
+    const logoText = document.getElementById("logo-text");
+    const btn = document.getElementById("estimate-btn");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            logoText.classList.toggle("blue", entry.isIntersecting);
+            btn.classList.toggle("blue-bg", entry.isIntersecting);
+            logoImg.classList.toggle("blue", entry.isIntersecting);
+        })
+    },
+    {
+        threshold: 0.1,
+    })
+    observer.observe(about);
+</script>

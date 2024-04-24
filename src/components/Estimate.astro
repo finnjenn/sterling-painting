@@ -1,0 +1,136 @@
+<section id="estimate">
+    <div id="text">
+        <h1 class="quote-io">Get a Free Quote</h1>
+        <h2 class="quote-io">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, dicta autem quae est et sunt, voluptatem temporibus.</h2>
+    </div>
+    <form action="">
+        <input type="text" placeholder="Fullname">
+        <input type="email" name="email" id="" placeholder="Email">
+        <input type="tel" name="phone" id="" placeholder="Phone">
+        <textarea rows="10" name="message" id="" placeholder="Please include all services of interest"></textarea>
+        <button>Submit</button>
+    </form>
+</section>
+
+<style>
+    #estimate {
+        background-color: #c17a5f;
+        color: white;
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+        display: flex;
+        align-items: center;
+    }
+    #text,
+    form {
+        margin: 1rem;
+    }
+    #text {
+        padding: 10% 0;
+        border-right: 2px solid white;
+    }
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    h2 {
+        font-weight: 300;
+        width: 75%;
+        margin: 0.5rem;
+        line-height: 2rem;
+    }
+    /* .quote-io {
+        opacity: 0;
+        transition: 500ms;
+        transform: translateY(3rem);
+    } */
+    /* .show {
+        opacity: 1;
+        transform: translate(0);
+    } */
+    form {
+        flex-basis: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 2rem;
+        color: white;
+    }
+    input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+        width: 60%;
+        color: white;
+    }
+    textarea {
+        background-color: transparent;
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+        width: 80%;
+        resize: none;
+        border: 1px solid white;
+        color: white;
+    }
+    input::placeholder,
+    textarea::placeholder {
+        letter-spacing: 2px;
+        color: white
+    }
+    input:focus,
+    textarea:focus {
+        border: none;
+        outline: none;
+        outline: 1px solid white;
+    }
+    button {
+        width: 8rem;
+        display: inline;
+        background-color: white;
+        color: black;
+        border: 1px solid white;
+        border-radius: 0.5rem;
+        padding: 0.75rem 1rem;
+        margin-top: 0.5rem;
+        letter-spacing: 1px;
+        transition: 250ms;
+    }
+    button:hover {
+        background-color: transparent;
+        color: white;
+    }
+    @media (max-width: 60rem) {
+        #estimate {
+            flex-direction: column;
+            margin-top: 2rem;
+        }
+        #text {
+            border: none;
+            padding-bottom: 0;
+        }
+        form {
+            width: 100%;
+            padding-left: 1.5rem;
+        }
+    }
+</style>
+
+<script>
+    const estimate = document.getElementById("estimate");
+    const logoImg = document.getElementById("logo");
+    const logoText = document.getElementById("logo-text");
+    const btn = document.getElementById("estimate-btn");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            logoText.classList.toggle("peach", entry.isIntersecting);
+            btn.classList.toggle("peach-bg", entry.isIntersecting);
+            logoImg.classList.toggle("peach", entry.isIntersecting);
+        })
+    },
+    {
+        threshold: 0.1,
+    })
+    observer.observe(estimate);
+</script>

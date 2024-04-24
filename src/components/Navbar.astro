@@ -1,0 +1,156 @@
+<nav>
+    <button id="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+      </button>
+    <a href="/" id="logo-link">
+        <span id="logo-text" class="yellow">Sterling Painting</span>
+        <svg id="logo" class:list="yellow" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#b18900"  stroke-width="1.75"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-paint"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 3m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" /><path d="M19 6h1a2 2 0 0 1 2 2a5 5 0 0 1 -5 5l-5 0v2" /><path d="M10 15m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z" /></svg>
+    </a>
+    <ul id="primary-nav" data-mobile-nav-visible="false">
+        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="" class="nav-link">Testimonials</a></li>
+        <li id="estimate-btn" class="nav-item yellow-bg"><a href="" class="nav-link">Free Estimate</a></li>
+    </ul>
+</nav>
+
+<style>
+    nav {
+        display: flex;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        /* border: 1px solid black; */
+        background-color: white;
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
+        padding: 0 1rem;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    #nav-toggle {
+        display: none;
+        cursor: pointer;
+        z-index: 9999;
+    }
+    #logo {
+        display: inline;
+        transform: translateY(3px);
+        transition: 200ms;
+    }
+    #logo-link {
+        padding: 1rem 0;
+    }
+    #logo-text {
+        margin: auto 0;
+        font-family: "Merriweather", serif;
+        font-style: italic;
+        font-weight: 700;
+        font-size: 1.5rem;
+        transition: 200ms;
+    }
+    #primary-nav {
+        display: flex;
+        align-items: baseline;
+        margin-left: auto;
+    }
+    .nav-item {
+        cursor: pointer;
+        padding: 0.5rem;
+        margin: 0.5rem;
+        transition: 200ms;
+    }
+    .nav-item:hover {
+        transform: translateY(-2px);
+    }
+    #estimate-btn {
+        /* background-color: #b18900; */
+        border-radius: 1rem;
+        padding: 0.5rem 0.75rem;
+    }
+    #estimate-btn a {
+        color: white;
+    }
+    .yellow {
+        color: #b18900;
+        stroke: #b18900;
+    }
+    .yellow-bg {
+        background-color: #b18900;
+    }
+    .black {
+        color: black;
+        stroke: black;
+    }
+    .black-bg {
+        background-color: black;
+    }
+    .blue {
+        color: #4d547a;
+        stroke: #4d547a;
+    }
+    .blue-bg {
+        background-color: #4d547a;
+    }
+    .peach {
+        color: #c17a5f;
+        stroke: #c17a5f;
+    }
+    .peach-bg {
+        background-color: #c17a5f;
+    }
+    @media (max-width: 50rem) {
+        #nav-toggle {
+            display: block;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background-image: url("/images/menu.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 2rem;
+            height: 2rem;
+            background-color: white;
+            border: none;
+            /* padding: 0.25rem; */
+        }
+        #nav-toggle[aria-expanded="true"] {
+            background-image: url("/images/x.svg");
+        }
+        #primary-nav {
+            z-index: 999;
+            position: fixed;
+            /* Change last percentage for how far menu slides out */
+            inset: 0 0 0 40%;
+            transform: translateX(100%);
+            flex-direction: column;
+            align-items: start;
+            transition: 500ms ease-in-out;
+            background-color: white;
+            padding-top: 4rem;
+        }
+        #primary-nav[data-mobile-nav-visible="true"] {
+            transform: translateX(0%);
+        }
+    }
+</style>
+
+<script>
+    const primaryNav = document.querySelector("#primary-nav");
+    const navToggle = document.querySelector("#nav-toggle");
+    navToggle.addEventListener("click", () => {
+      console.log("nav toggle clicked");
+      const isNavVisible = primaryNav.getAttribute("data-mobile-nav-visible");
+      if (isNavVisible === "false") {
+        primaryNav.setAttribute("data-mobile-nav-visible", "true");
+        navToggle.setAttribute("aria-expanded", "true");
+      } else {
+        primaryNav.setAttribute("data-mobile-nav-visible", "false");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  </script>
