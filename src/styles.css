@@ -10,13 +10,13 @@
   list-style: none;
   scroll-behavior: smooth;
   scroll-margin-top: 7rem;
-  /* overflow-x: hidden; */
 }
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  /* font-family: "Roboto", Arial, Helvetica, sans-serif; */
-  /* background-color: #fbfbfe; */
+}
+html {
+  overflow-x: hidden;
 }
 img,
 picture,
