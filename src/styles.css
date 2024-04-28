@@ -13,10 +13,10 @@
 }
 body {
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 img,
 picture,
