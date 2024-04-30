@@ -41,12 +41,16 @@
         font-weight: 700;
     }
     #card-box {
-        display: flex;
         margin-top: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         color: white;
-        margin: 0.5rem;
+        margin: 1rem;
         padding: 1.5rem;
         border-radius: 1rem;
         transition: 300ms;
@@ -77,15 +81,20 @@
     .card:nth-of-type(4) {
         background-color: #9d4924;
     }
-    @media (max-width: 65rem) {
+    @media (max-width: 70rem) {
         #card-box {
-            flex-direction: column;
+            grid-template-columns: 1fr 1fr;
         }
         h1 {
             margin-left: 0.5rem;
         }
         h2 {
             margin-left: 1rem;
+        }
+    }
+    @media (max-width: 40rem) {
+        #card-box {
+            grid-template-columns: 1fr;
         }
     }
 </style>
