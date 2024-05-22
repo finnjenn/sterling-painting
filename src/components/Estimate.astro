@@ -1,21 +1,22 @@
 <section id="estimate">
     <div id="text">
         <h1 class="quote-io">Get a Free Estimate</h1>
-        <h2 class="quote-io">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, dicta autem quae est et sunt, voluptatem temporibus.</h2>
+        <h2>Email | <a href="mailto:sphillipsparmer@gmail.com">sphillipsparmer@gmail.com</a></h2>
+        <h2>Phone | <a href="tel:+5404949945"></a>(540) 494-9945</h2>
     </div>
     <form action="">
-        <input type="text" placeholder="Fullname">
-        <input type="email" name="email" id="" placeholder="Email">
-        <input type="tel" name="phone" id="" placeholder="Phone">
-        <textarea rows="10" name="message" id="" placeholder="Please include all services of interest"></textarea>
+        <input type="text" name="fullname" placeholder="Fullname">
+        <input type="email" name="email" placeholder="Email">
+        <input type="tel" name="phone" placeholder="Phone">
+        <textarea rows="10" name="message" placeholder="Please include all services of interest and a brief description of the work to be done"></textarea>
         <button>Submit</button>
     </form>
 </section>
 
 <style>
     #estimate {
-        background-color: #c17a5f;
-        color: white;
+        background-color: #f3e3b7;
+        color: black;
         font-family: "Roboto", Arial, Helvetica, sans-serif;
         display: flex;
         align-items: center;
@@ -25,8 +26,9 @@
         margin: 1rem;
     }
     #text {
-        padding: 10% 0;
-        border-right: 2px solid white;
+        padding: 10% 2rem 10% 0;
+        border-right: 2px solid black;
+        flex-basis: 40%;
     }
     h1 {
         font-size: 3rem;
@@ -34,9 +36,13 @@
     }
     h2 {
         font-weight: 300;
+        font-size: 1.1rem;
         width: 75%;
         margin: 0.5rem;
         line-height: 2rem;
+    }
+    a {
+        color: black;
     }
     form {
         flex-basis: 60%;
@@ -45,16 +51,16 @@
         justify-content: center;
         margin-top: 2rem;
         padding-bottom: 2rem;
-        color: white;
+        color: black;
     }
     input {
         background-color: transparent;
         border: none;
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid black;
         padding: 0.5rem;
         margin: 0.5rem 0;
         width: 60%;
-        color: white;
+        color: black;
     }
     textarea {
         background-color: transparent;
@@ -62,13 +68,14 @@
         margin: 0.5rem 0;
         width: 80%;
         resize: none;
-        border: 1px solid white;
-        color: white;
+        border: 1px solid black;
+        color: black;
     }
     input::placeholder,
     textarea::placeholder {
         letter-spacing: 2px;
-        color: white
+        color: black;
+        line-height: 1.5rem;
     }
     input:focus,
     textarea:focus {
@@ -79,9 +86,9 @@
     button {
         width: 8rem;
         display: inline;
-        background-color: white;
+        background-color: transparent;
         color: black;
-        border: 1px solid white;
+        border: 1px solid black;
         border-radius: 0.5rem;
         padding: 0.75rem 1rem;
         margin-top: 0.5rem;
@@ -89,17 +96,19 @@
         transition: 250ms;
     }
     button:hover {
-        background-color: transparent;
+        background-color: black;
         color: white;
     }
     @media (max-width: 60rem) {
         #estimate {
             flex-direction: column;
             margin-top: 2rem;
+            align-items: start;
         }
         #text {
             border: none;
             padding-bottom: 0;
+            padding-left: 1.5rem;
         }
         form {
             width: 100%;
@@ -116,9 +125,9 @@
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            logoText.classList.toggle("peach", entry.isIntersecting);
-            btn.classList.toggle("peach-bg", entry.isIntersecting);
-            logoImg.classList.toggle("peach", entry.isIntersecting);
+            logoText.classList.toggle("cream", entry.isIntersecting);
+            btn.classList.toggle("cream-bg", entry.isIntersecting);
+            logoImg.classList.toggle("cream", entry.isIntersecting);
         })
     },
     {
