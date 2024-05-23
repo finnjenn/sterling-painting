@@ -49,7 +49,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        /* color: white; */
         margin: 1rem;
         padding: 1.5rem;
         border-radius: 1rem;
@@ -66,8 +65,6 @@
     }
     h3 {
         text-align: right;
-        /* text-transform: uppercase; */
-        /* font-weight: 400; */
         font-size: 1.2rem;
     }
     .card:nth-of-type(1) {
@@ -103,22 +100,3 @@
         }
     }
 </style>
-
-<!-- <script>
-    const testimonials = document.getElementById("testimonials");
-    const logoImg = document.getElementById("logo");
-    const logoText = document.getElementById("logo-text");
-    const btn = document.getElementById("estimate-btn");
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            logoText.classList.toggle("black", entry.isIntersecting);
-            btn.classList.toggle("black-bg", entry.isIntersecting);
-            logoImg.classList.toggle("black", entry.isIntersecting);
-        })
-    },
-    {
-        threshold: 0.1,
-    })
-    observer.observe(testimonials);
-</script> -->

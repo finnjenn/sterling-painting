@@ -4,11 +4,11 @@
         <h2>Email | <a href="mailto:sphillipsparmer@gmail.com">sphillipsparmer@gmail.com</a></h2>
         <h2>Phone | <a href="tel:+5404949945">(540) 494-9945</a></h2>
     </div>
-    <form action="">
-        <input type="text" name="fullname" placeholder="Fullname">
-        <input type="email" name="email" placeholder="Email">
-        <input type="tel" name="phone" placeholder="Phone">
-        <textarea rows="10" name="message" placeholder="Please include all services of interest and a brief description of the work to be done"></textarea>
+    <form action="https://formspree.io/f/mrgnvlkb" method="POST">
+        <input type="text" name="fullname" placeholder="Fullname" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Phone" required>
+        <textarea rows="10" name="message" placeholder="Please include all services of interest and a brief description of the work to be done" required></textarea>
         <button>Submit</button>
     </form>
 </section>
@@ -116,22 +116,3 @@
         }
     }
 </style>
-
-<!-- <script>
-    const estimate = document.getElementById("estimate");
-    const logoImg = document.getElementById("logo");
-    const logoText = document.getElementById("logo-text");
-    const btn = document.getElementById("estimate-btn");
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            logoText.classList.toggle("cream", entry.isIntersecting);
-            btn.classList.toggle("cream-bg", entry.isIntersecting);
-            logoImg.classList.toggle("cream", entry.isIntersecting);
-        })
-    },
-    {
-        threshold: 0.1,
-    })
-    observer.observe(estimate);
-</script> -->
