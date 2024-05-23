@@ -3,8 +3,9 @@
         <span class="sr-only">Menu</span>
       </button>
     <a href="/" id="logo-link">
-        <span id="logo-text" class="yellow">Sterling Painting</span>
-        <svg id="logo" class:list="yellow" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#b18900"  stroke-width="1.75"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-paint"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 3m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" /><path d="M19 6h1a2 2 0 0 1 2 2a5 5 0 0 1 -5 5l-5 0v2" /><path d="M10 15m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z" /></svg>
+        <img id="logo-img" src="/images/logoSP.png" alt="">
+        <!-- <span id="logo-text" class="yellow">Sterling Painting</span> -->
+        <!-- <svg id="logo" class:list="yellow" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#b18900"  stroke-width="1.75"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-paint"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 3m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z" /><path d="M19 6h1a2 2 0 0 1 2 2a5 5 0 0 1 -5 5l-5 0v2" /><path d="M10 15m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z" /></svg> -->
     </a>
     <ul id="primary-nav" data-mobile-nav-visible="false">
         <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
@@ -40,6 +41,9 @@
         transform: translateY(3px);
         transition: 200ms;
     }
+    #logo-img {
+        height: 2.5rem;
+    }
     #logo-link {
         padding: 1rem 0;
     }
@@ -66,18 +70,18 @@
         transform: translateY(-2px);
     }
     #estimate-btn {
-        border-radius: 1rem;
+        border-radius: 0.5rem;
         padding: 0.5rem 0.75rem;
     }
     #estimate-btn a {
         color: white;
     }
     .yellow {
-        color: #b18900;
+        color: #ff5000;
         stroke: #b18900;
     }
     .yellow-bg {
-        background-color: #b18900;
+        background-color: #ff5000;
     }
     .black {
         color: black;
@@ -105,7 +109,7 @@
         #nav-toggle {
             display: block;
             position: fixed;
-            top: 1rem;
+            top: 1.25rem;
             right: 1rem;
             background-image: url("/images/menu.svg");
             background-repeat: no-repeat;
@@ -129,7 +133,7 @@
             align-items: start;
             transition: 500ms ease-in-out;
             background-color: white;
-            padding-top: 4rem;
+            padding-top: 5rem;
         }
         #primary-nav[data-mobile-nav-visible="true"] {
             transform: translateX(0%);
